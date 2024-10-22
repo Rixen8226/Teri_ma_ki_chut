@@ -1,0 +1,28 @@
+<?php
+// Retrieve POST data (email address sent from the frontend)
+$data = json_decode(file_get_contents("php://input"), true);
+
+if (isset($data['email'])) {
+    // Email details
+    $to = $data['email']; // Recipient email address (submitted via the form)
+    $subject = 'Your Payment Confirmation - King Patcher'; // Customize the subject
+    $message = "Hello,\n\nThank you for your payment!\n\nWe have received your details and are processing your request. Your payment confirmation number is #123456789. If you have any questions, feel free to reply to this email.\n\nBest regards,\nKing Patcher Support Team"; // Customize the message
+
+    // Email headers
+    $headers = 'From: kingpatcherteam@gmail.com' . "\r\n" . // Your email
+               'Reply-To: kingpatcherteam@gmail.com' . "\r\n" . // Your email for replies
+               'X-Mailer: PHP/' . phpversion();
+
+    // Send email
+    if (mail($to, $subject, $message, $headers)) {
+        // If the email is sent successfully
+        echo json_encode(['success' => true]);
+    } else {
+        // If there was an error sending the email
+        echo json_encode(['success' => false]);
+    }
+} else {
+    // If no email was provided in the POST request
+    echo json_encode(['success' => false]);
+}
+?>

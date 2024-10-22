@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page by King Patcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 130%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4c4cff, #92a8d1);
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 340px;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+        }
+
+        .qr-code {
+            margin-bottom: 20px;
+        }
+
+        .qr-code img {
+            border: 2px solid #4c4cff;
+            border-radius: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: #4c4cff;
+            box-shadow: 0 0 8px rgba(76, 76, 255, 0.3);
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4c4cff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-btn:hover {
+            background-color: #3636e6;
+            transform: translateY(-3px);
+        }
+
+        .form-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .container h2 {
+            color: #4c4cff;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff4c4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Secure Payment</h2>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?cu=INR%26tn=King+Patcher+Plan%26pa=AbrarEntry%40jio%26pn=Nikhil%26am=1999.00%26ref=https://pay.tikan.ga"
+                alt="QR Code">
+
+
+            <h3> <a href="upi://pay?cu=INR&pa=AbrarEntry@jio&pn=Nikhil&tn=King Patcher%20Plan&am=1999.00" id="payBtn"
+                    class="pay-btn">@AbrarEntry@jio</a> </h3>
+
+             <h4> <a>⚠️ Warning: Please make payment only on the given QR or by clicking on the given UPI I'd and remember that the payment should be of the full amount</a> </h4>
+        
+        </div>
+        <form id="paymentForm" action="send_email.php" method="post" class="form">
+            <!-- UTR Number: exactly 12 digits required -->
+            <input type="text" id="utrNumber" name="utr_number" class="form-input" placeholder="UTR Number"
+                pattern="\d{12}" maxlength="12" minlength="12" title="UTR Number must be exactly 12 digits" required>
+
+            <!-- Full Name -->
+            <input type="text" name="fullname" class="form-input" placeholder="Full Name" required>
+
+            <!-- Email -->
+            <input type="email" id="emailAddress" name="email" class="form-input" placeholder="Email Address" required>
+
+            <!-- Phone Number: exactly 10 digits required -->
+            <input type="text" id="phoneNumber" name="phone" class="form-input" placeholder="Phone Number"
+                pattern="\d{10}" maxlength="10" minlength="10" title="Phone Number must be exactly 10 digits" required>
+
+            <!-- Telegram ID -->
+            <input type="text" name="telegram_id" class="form-input" placeholder="Telegram ID" required>
+
+
+            <button type="submit" id="submitBtn" class="form-btn" disabled>Submit</button>
+
+        </form>
+        <div id="countdown" class="countdown"></div>
+    </div>
+
+    <script>
+        const utrNumberInput = document.getElementById('utrNumber');
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        const emailInput = document.getElementById('emailAddress');
+        const submitBtn = document.getElementById('submitBtn');
+        const form = document.getElementById('paymentForm');
+        const countdownDiv = document.getElementById('countdown');
+
+        function validateInputs() {
+            const isUtrValid = utrNumberInput.value.length === 12;
+            const isPhoneValid = phoneNumberInput.value.length === 10;
+            submitBtn.disabled = !(isUtrValid && isPhoneValid);
+        }
+
+        utrNumberInput.addEventListener('input', validateInputs);
+        phoneNumberInput.addEventListener('input', validateInputs);
+
+        function startCountdown(duration, email) {
+            let timer = duration, minutes, seconds;
+            const countdownInterval = setInterval(function () {
+                minutes = Math.floor(timer / 60);
+                seconds = timer % 60;
+
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                countdownDiv.textContent = `Please wait: ${minutes}:${seconds} minutes`;
+
+                if (--timer < 0) {
+                    clearInterval(countdownInterval);
+                    countdownDiv.textContent = 'Sending email...';
+
+                    // Call the backend to send the email
+                    fetch('send_email.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({email: email})
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                countdownDiv.textContent = 'Confirmation email sent successfully!';
+                            } else {
+                                countdownDiv.textContent = 'Payment failed. Please try again. Or Contact customer support.';
+                            }
+                        })
+                        .catch(error => {
+                            countdownDiv.textContent = 'Payment failed. Please try again. Or Contact customer support.';
+                        });
+                }
+            }, 1000);
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = emailInput.value;
+            submitBtn.disabled = true;
+            startCountdown(300, email);
+        });
+    </script>
+</body>
+
+</html>
