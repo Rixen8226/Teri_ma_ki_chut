@@ -419,9 +419,9 @@
         function downloadQR() {
             // Create an anchor element
             const link = document.createElement("a");
-            link.href = "qr.png"; // Path to the QR code image
+            link.href = "qr.jpg"; // Path to the QR code image
 
-            link.download = "pay_on_this_qr.png"; // File name when downloaded
+            link.download = "pay_on_this_qr.jpg"; // File name when downloaded
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
