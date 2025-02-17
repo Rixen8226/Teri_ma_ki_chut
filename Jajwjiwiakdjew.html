@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #2b2b2b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .back-button:hover {
+            background: #444;
+            transform: scale(1.1);
+        }
+
+        .back-button:active {
+            transform: scale(0.9);
+        }
+
+        .back-button svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .header {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            color: red;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .details p {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        .qr-section {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background: white;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        .manual-address {
+            background: black;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .gradient-button {
+            background: linear-gradient(to right, #00ff7f, #00c853);
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(to right, #00e676, #00ff7f);
+            transform: scale(1.05);
+        }
+
+        .gradient-button:active {
+            transform: scale(0.98);
+        }
+
+        .utr-input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #222;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .utr-input:focus {
+            border-color: #00c853;
+            box-shadow: none;
+        }
+
+        .instructions {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: left;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .security-note {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .collapsible {
+            background: none;
+            color: white;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: underline;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .collapsible:hover {
+            color: #00c853;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        outline: none;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(to right, #00e676, #00ff7f);
+            transform: scale(1.05);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 80%;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .upi-apps {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .upi-app {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .upi-app img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-bottom: 1px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button class="back-button" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"></path>
+            </svg>
+        </button>
+
+        <div class="header">Deposit</div>
+        <div class="warning">If QR upload to pay through UPI app fails, scan QR with another device or pay manually
+        </div>
+
+        <div class="details">
+            <p><strong>Amount:</strong> ₹5,000</p>
+            <p><strong>Status:</strong> Processing</p>
+            <p><strong>Time Left:</strong> <span id="time-left">10:00</span></p>
+        </div>
+
+        <div class="qr-section">
+            <div class="header">Scan QR code</div>
+            <img src="qr.jpg" alt="QR Code" class="qr-code">
+            <div class="manual-address">supramod@idfcbank</div>
+            <button class="gradient-button copy-button">Copy Address</button>
+            <button class="gradient-button download-button" onclick="downloadQR()">Download QR</button>
+        </div>
+
+        <input type="text" class="utr-input" placeholder="Please provide UPI/UTR number">
+        <button class="gradient-button submit-button">Submit</button>
+
+        <button class="collapsible">How to make a deposit?</button>
+        <div class="content">
+            <div class="instructions">
+                <p>1. Open your payment app and scan or upload the QR code, or manually enter the UPI ID.</p>
+                <p>2. Input the exact deposit amount shown above and confirm the transfer.</p>
+                <p>3. Come back here and submit the UTR to finalize your order.</p>
+            </div>
+        </div>
+
+        <!-- Tutorial Button -->
+        <button class="gradient-button tutorial-button">Watch Tutorial</button>
+
+
+        <div class="security-note">Your data is protected with advanced 256-bit SSL encryption for maximum security.
+        </div>
+    </div>
+    <!-- Modal for App Selection -->
+    <div class="modal" id="appModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAppModal()">&times;</span>
+            <h3>Which UPI app do you use?</h3>
+            <div class="upi-apps">
+                <div class="upi-app" onclick="openTutorial('phonepe')">
+                    <img src="phonepe.jpg" alt="PhonePe">
+                    <p>PhonePe</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('gpay')">
+                    <img src="gpay.png" alt="Google Pay">
+                    <p>GPay</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('paytm')">
+                    <img src="paytm.png" alt="Paytm">
+                    <p>Paytm</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('fampay')">
+                    <img src="fampay.png" alt="Fampay">
+                    <p>Fampay</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Video Tutorial -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <iframe id="tutorialVideo" src="" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = "https://kingpatcher.com"; // Redirect to the website
+        }
+
+        // Copy Address to Clipboard
+        document.querySelector(".copy-button").addEventListener("click", function () {
+            navigator.clipboard.writeText("supramod@idfcbank");
+            alert("Address copied!");
+        });
+
+        // Toggle Collapsible Instructions
+        document.querySelector(".collapsible").addEventListener("click", function () {
+            var content = document.querySelector(".content");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+
+        // Countdown Timer
+        let timeLeft = 10 * 60; // 10 minutes in seconds
+        const timeDisplay = document.getElementById("time-left");
+
+        function updateTime() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                clearInterval(timerInterval);
+                // Optional: handle when the timer finishes (e.g., alert or stop the process)
+                alert("Time's up! Please try again.");
+            }
+        }
+
+
+        const timerInterval = setInterval(updateTime, 1000);
+        // Open App Selection Modal
+        document.querySelector(".tutorial-button").addEventListener("click", function () {
+            document.getElementById("appModal").style.display = "flex";
+        });
+
+        // Close App Selection Modal
+        function closeAppModal() {
+            document.getElementById("appModal").style.display = "none";
+        }
+
+        // Open Video Modal with Selected App Tutorial
+        function openTutorial(app) {
+            let videoUrl = "";
+            if (app === "phonepe") {
+                videoUrl = "https://www.youtube.com/embed/YOUR_PHONEPE_TUTORIAL_VIDEO";
+            } else if (app === "gpay") {
+                videoUrl = "https://www.youtube.com/embed/YOUR_GPAY_TUTORIAL_VIDEO";
+            } else if (app === "paytm") {
+                videoUrl = "https://www.youtube.com/embed/YOUR_PAYTM_TUTORIAL_VIDEO";
+            } else if (app === "fampay") {
+                videoUrl = "op.mp4";
+            }
+
+            document.getElementById("tutorialVideo").src = videoUrl;
+            document.getElementById("appModal").style.display = "none";
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+
+
+
+
+        // Close Video Modal
+        function closeVideoModal() {
+            document.getElementById("videoModal").style.display = "none";
+            document.getElementById("tutorialVideo").src = "";
+        }
+        function downloadQR() {
+            // Create an anchor element
+            const link = document.createElement("a");
+            link.href = "qr.png"; // Path to the QR code image
+
+            link.download = "pay_on_this_qr.png"; // File name when downloaded
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
