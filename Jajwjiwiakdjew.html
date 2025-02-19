@@ -277,6 +277,7 @@
         </div>
 
         <div class="details">
+            <p><strong>Product:</strong> ok</p>
             <p><strong>Amount:</strong> ₹5,000</p>
             <p><strong>Status:</strong> Processing</p>
             <p><strong>Time Left:</strong> <span id="time-left">10:00</span></p>
@@ -427,6 +428,33 @@
             document.body.removeChild(link);
         }
 
+    // Function to extract URL parameters
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            productname: params.get("productname") || "Unknown Product", // Default to "Unknown Product" if empty
+            amount: params.get("amount") || "0" // Default amount to "0" if not provided
+        };
+    }
+
+    // Function to update product details dynamically
+    function updatePaymentDetails() {
+        const { productname, amount } = getQueryParams();
+
+        // Find the product and amount elements
+        let productElement = document.querySelector(".details p:nth-child(1) strong").nextSibling;
+        let amountElement = document.querySelector(".details p:nth-child(2) strong").nextSibling;
+
+        // Update text content
+        if (productElement && amountElement) {
+            productElement.textContent = " " + productname;
+            amountElement.textContent = " ₹" + amount;
+        }
+    }
+
+    // Run the function to update details
+    updatePaymentDetails();
+   
 
     </script>
 
