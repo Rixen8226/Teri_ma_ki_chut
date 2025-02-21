@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deposit</title>
+    <title>Payment Page by KP</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -188,10 +189,12 @@
 
         .collapsible:hover {
             color: #00c853;
+
         }
 
+
         .content {
-            display: none;
+            max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
@@ -260,6 +263,40 @@
             height: 300px;
             border-radius: 10px;
         }
+
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 25px;
+            border-radius: 10px;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            z-index: 1000;
+            min-width: 300px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-popup.error {
+            background-color: #2b2b2b;
+        }
+
+        .custom-popup.success {
+            background-color: #2b2b2b;
+        }
+
+        .custom-popup.processing {
+            background-color: #2b2b2b;
+        }
+
+        .popup-icon {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -272,21 +309,21 @@
             </svg>
         </button>
 
-        <div class="header">Deposit</div>
+        <div class="header">Pay Securely</div>
         <div class="warning">If QR upload to pay through UPI app fails, scan QR with another device or pay manually
         </div>
 
         <div class="details">
-            <p><strong>Product:</strong> ok</p>
-            <p><strong>Amount:</strong> ₹5,000</p>
+            <p><strong>Product:</strong> Loading...</p>
+            <p><strong>Amount:</strong> Loading...</p>
             <p><strong>Status:</strong> Processing</p>
-            <p><strong>Time Left:</strong> <span id="time-left">10:00</span></p>
+            <p><strong>Time Left:</strong><span id="time-left"></span></p>
         </div>
 
         <div class="qr-section">
             <div class="header">Scan QR code</div>
-            <img src="qr.jpg" alt="QR Code" class="qr-code">
-            <div class="manual-address">supramod@idfcbank</div>
+            <img src="" alt="QR Code" class="qr-code">
+            <div class="manual-address">BHARATPE.8.....1@fbpe</div>
             <button class="gradient-button copy-button">Copy Address</button>
             <button class="gradient-button download-button" onclick="downloadQR()">Download QR</button>
         </div>
@@ -310,6 +347,7 @@
         <div class="security-note">Your data is protected with advanced 256-bit SSL encryption for maximum security.
         </div>
     </div>
+
     <!-- Modal for App Selection -->
     <div class="modal" id="appModal">
         <div class="modal-content">
@@ -343,6 +381,11 @@
                 allowfullscreen></iframe>
         </div>
     </div>
+    <div class="custom-popup">
+        <span class="popup-icon"></span>
+        <span class="popup-message"></span>
+    </div>
+
     <script>
         function goBack() {
             window.location.href = "https://kingpatcher.com"; // Redirect to the website
@@ -350,8 +393,11 @@
 
         // Copy Address to Clipboard
         document.querySelector(".copy-button").addEventListener("click", function () {
-            navigator.clipboard.writeText("supramod@idfcbank");
-            alert("Address copied!");
+            navigator.clipboard.writeText("BHARATPE.8D0D0G3K3N93441@fbpe").then(() => {
+                alert("Address copied!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
         });
 
         // Toggle Collapsible Instructions
@@ -360,26 +406,7 @@
             content.style.display = content.style.display === "block" ? "none" : "block";
         });
 
-        // Countdown Timer
-        let timeLeft = 10 * 60; // 10 minutes in seconds
-        const timeDisplay = document.getElementById("time-left");
 
-        function updateTime() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
-            if (timeLeft > 0) {
-                timeLeft--;
-            } else {
-                clearInterval(timerInterval);
-                // Optional: handle when the timer finishes (e.g., alert or stop the process)
-                alert("Time's up! Please try again.");
-            }
-        }
-
-
-        const timerInterval = setInterval(updateTime, 1000);
         // Open App Selection Modal
         document.querySelector(".tutorial-button").addEventListener("click", function () {
             document.getElementById("appModal").style.display = "flex";
@@ -410,54 +437,196 @@
 
 
 
-
-
         // Close Video Modal
         function closeVideoModal() {
+
             document.getElementById("videoModal").style.display = "none";
             document.getElementById("tutorialVideo").src = "";
         }
         function downloadQR() {
-            // Create an anchor element
-            const link = document.createElement("a");
-            link.href = "qr.jpg"; // Path to the QR code image
+            const qrImageUrl = document.querySelector(".qr-code").src; // Get the QR URL
 
-            link.download = "pay_on_this_qr.jpg"; // File name when downloaded
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            fetch(qrImageUrl)
+                .then(response => response.blob()) // Convert response to Blob
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob); // Create object URL
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.download = "payment_qr.png"; // Set file name
+                    document.body.appendChild(link);
+                    link.click(); // Trigger download
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url); // Clean up memory
+                })
+                .catch(error => console.error("Download failed:", error));
         }
 
-    // Function to extract URL parameters
-    function getQueryParams() {
-        const params = new URLSearchParams(window.location.search);
-        return {
-            productname: params.get("productname") || "Unknown Product", // Default to "Unknown Product" if empty
-            amount: params.get("amount") || "0" // Default amount to "0" if not provided
-        };
-    }
+        let timeLeft = 30 * 60; // 5 seconds
+        const timeDisplay = document.getElementById("time-left");
 
-    // Function to update product details dynamically
-    function updatePaymentDetails() {
-        const { productname, amount } = getQueryParams();
+        function updateTime() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart
+                (2, '0')}`;
 
-        // Find the product and amount elements
-        let productElement = document.querySelector(".details p:nth-child(1) strong").nextSibling;
-        let amountElement = document.querySelector(".details p:nth-child(2) strong").nextSibling;
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                clearInterval(timerInterval);
 
-        // Update text content
-        if (productElement && amountElement) {
-            productElement.textContent = " " + productname;
-            amountElement.textContent = " ₹" + amount;
+                window.location.href = "OrderExpired.html"; // Change to your desired page
+            }
         }
-    }
 
-    // Run the function to update details
-    updatePaymentDetails();
-   
 
+
+        const timerInterval = setInterval(updateTime, 1000);
+
+        // Function to extract URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+
+                productname: params.get("productname") || "Unknown Product",
+                amount: params.get("amount") || "0"
+            };
+        }
+
+        // Function to update product details dynamically
+        function updatePaymentDetails() {
+            const {productname, amount} = getQueryParams();
+
+            // Find the product and amount elements
+            let productElement = document.querySelector(".details p:nth-child(1) strong").nextSibling;
+            let amountElement = document.querySelector(".details p:nth-child(2) strong").nextSibling;
+
+            // Update text content
+            if (productElement && amountElement) {
+                productElement.textContent = " " + productname;
+                amountElement.textContent = " ₹" + amount;
+            }
+        }
+        // Run the function to update details
+        updatePaymentDetails();
+
+        document.querySelector(".collapsible").addEventListener("click", function () {
+            var content = document.querySelector(".content");
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+
+        function updateQRCode() {
+            const {amount} = getQueryParams();
+            const upiID = "BHARATPE.8D0D0G3K3N93441@fbpe"; // Your BharatPe UPI ID
+            const payeeName = "Your Payee Name"; // Update this with your actual payee name
+
+            // Encode UPI payment URL
+            const upiURL = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+
+            // Generate QR code
+            const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(upiURL)}`;
+
+            // Update the QR code image
+            document.querySelector(".qr-code").src = qrCodeURL;
+        }
+
+        // Run the function after the page loads
+        updateQRCode();
+
+
+
+
+
+        document.querySelector(".submit-button").addEventListener("click", async function () {
+            let utrInput = document.querySelector(".utr-input").value.trim();
+
+            if (utrInput.length !== 12 || isNaN(utrInput)) {
+                showPopup("error", "UTR/Transaction ID you entered is invalid.");
+                return;
+            }
+
+            showPopup("processing", "Processing... Please wait.");
+
+            // Fetch transaction details from BharatPe API
+            let response = await fetch("https://payments-tesseract.bharatpe.in/api/v1/merchant/transactions?module=PAYMENT_QR&merchantId=49038153", {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json, text/javascript, */*; q=0.01",
+                    "token": "a73eba99f8124cfe893ab74fa895e9a7"
+                }
+            });
+
+            let result = await response.json();
+
+            if (!result.status) {
+                showPopup("error", "Error: Unable to fetch transactions.");
+                return;
+            }
+
+            let transactions = result.data.transactions;
+            let {productname, amount} = getQueryParams();
+            let matchingTxn = transactions.find(txn => txn.bankReferenceNo === utrInput && txn.amount == amount);
+
+            if (matchingTxn) {
+                let utrDBUrl = "https://kingstorebb-9eb23-default-rtdb.firebaseio.com/used_utrs.json";
+
+                let usedUTRsResponse = await fetch(utrDBUrl);
+                let usedUTRs = await usedUTRsResponse.json() || [];
+
+                if (usedUTRs.includes(utrInput)) {
+                    showPopup("error", "This UTR has already been used.");
+                    return;
+                }
+
+                // Store the successful UTR in Firebase
+                usedUTRs.push(utrInput);
+                await fetch(utrDBUrl, {
+                    method: "PUT",
+                    body: JSON.stringify(usedUTRs),
+                    headers: {"Content-Type": "application/json"}
+                });
+
+                showPopup("success", "Payment Successful! Redirecting...", () => {
+                    window.location.href = "https://your-special-link.com";
+                });
+            } else {
+                showPopup("error", "Invalid transaction. Please check your UTR and try again.");
+            }
+        });
+
+        // Function to show a custom popup
+        function showPopup(type, message, callback = null) {
+            let popup = document.querySelector(".custom-popup");
+            let popupText = document.querySelector(".popup-message");
+            let popupIcon = document.querySelector(".popup-icon");
+
+            popup.classList.remove("error", "success", "processing");
+            popup.classList.add(type);
+
+            popupText.innerText = message;
+
+            if (type === "error") {
+                popupIcon.innerHTML = "❌";  // Error icon
+            } else if (type === "success") {
+                popupIcon.innerHTML = "✅";  // Success icon
+            } else {
+                popupIcon.innerHTML = "⏳";  // Processing icon
+            }
+
+            popup.style.display = "block";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+                if (callback) callback();
+            }, 3000);
+        }
     </script>
 
 </body>
+
 
 </html>
