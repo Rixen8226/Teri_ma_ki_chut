@@ -1441,6 +1441,15 @@
 <script type="text/javascript" src="jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="slick.min.js"></script>
 <script type="text/javascript" src="particles.min.js"></script>
+    <script>
+    // Allowed paths that should NOT be redirected
+    const allowedPaths = ["/order", "/OrderExpired", "/info"];
+
+    // Redirect if the current path is not in the allowed list
+    if (!allowedPaths.includes(window.location.pathname) && window.location.pathname !== "/") {
+        window.location.replace("https://kingpatcher.com");
+    }
+    </script>
 <script type="text/javascript" src="main.js"></script>
 
 
