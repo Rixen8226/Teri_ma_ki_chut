@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page by KP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="838281838.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"></path>
+            </svg>
+        </button>
+
+        <div class="header">Pay Securely</div>
+        <div class="warning">If QR upload to pay through UPI app fails, scan QR with another device or pay manually
+        </div>
+
+        <div class="details">
+            <p><strong>Product:
+                </strong> Loading...</p>
+            <p><strong>Amount:</strong> Loading...</p>
+            <p><strong>Status:</strong> Processing</p>
+            <p><strong>Time Left:</strong><span id="time-left"></span></p>
+        </div>
+
+        <div class="qr-section">
+            <div class="header">Scan QR code</div>
+            <img src="loading.gif" alt="QR Code" class="qr-code">
+            <div class="manual-address">supramod@idfcbank</div>
+            <button class="gradient-button copy-button">Copy Address</button>
+            <button class="gradient-button download-button" onclick="downloadQR()">Download QR</button>
+        </div>
+
+        <input type="text" class="utr-input" placeholder="Please provide UPI/UTR number">
+        <button class="gradient-button submit-button">Submit</button>
+
+        <button class="collapsible">How to make a deposit?</button>
+        <div class="content">
+            <div class="instructions">
+                <p>1. Open your payment app and scan or upload the QR code, or manually enter the UPI ID.</p>
+                <p>2. Input the exact deposit amount shown above and confirm the transfer.</p>
+                <p>3. Come back here and submit the UTR to finalize your order.</p>
+            </div>
+        </div>
+
+        <button class="gradient-button tutorial-button">Watch Tutorial</button>
+
+        <div class="security-note">Your data is protected with advanced 256-bit SSL encryption for maximum security.
+        </div>
+    </div>
+
+    <div class="modal" id="appModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAppModal()">&times;</span>
+            <h3>Which UPI app do you use?</h3>
+            <div class="upi-apps">
+                <div class="upi-app" onclick="openTutorial('phonepe')">
+                    <img src="phonepe.jpg" alt="PhonePe">
+                    <p>PhonePe</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('gpay')">
+                    <img src="gpay.png" alt="Google Pay">
+                    <p>GPay</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('paytm')">
+                    <img src="paytm.png" alt="Paytm">
+                    <p>Paytm</p>
+                </div>
+                <div class="upi-app" onclick="openTutorial('fampay')">
+                    <img src="fampay.png" alt="Fampay">
+                    <p>Fampay</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <iframe id="tutorialVideo" src="loading.gif" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="custom-popup">
+        <span class="popup-icon"></span>
+        <span class="popup-message"></span>
+    </div>
+
+    <script type="text/javascript" src="82828488282.js"></script>
+
+
+
+</body>
+
+</html>
