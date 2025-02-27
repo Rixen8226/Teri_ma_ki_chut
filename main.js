@@ -174,22 +174,7 @@ $(document).ready(function() {
             if (gn === 1) {
                 $('.c-n').html($s_a_title);
             }
-            if (cl === 1) {
-    $('h3.proccessing-title').text($console_title_string_2);
-    
-    var lrurl = $lrurl; // Ensure the URL is stored correctly
-
-    // Try to open in a new tab
-    var newTab = window.open(lrurl, "_blank");
-
-    // If the browser blocks it, use Android intent to open in a browser
-    if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
-        window.location.href = "https://" + lrurl.replace("https://", "") + 
-            "#Intent;action=android.intent.action.VIEW;scheme=https;end;";
-    }
-            }
-        }, tD);
-    }
+     if (cl === 1) { $('h3.proccessing-title').text($console_title_string_2); location.href = $lrurl; } }, tD); }
     $('#search-form').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
