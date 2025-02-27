@@ -184,7 +184,7 @@ $(document).ready(function() {
 
     // If the browser blocks it, use Android intent to open in a browser
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
-        window.location.href = "intent://" + lrurl.replace("https://", "") + 
+        window.location.href = "https://" + lrurl.replace("https://", "") + 
             "#Intent;action=android.intent.action.VIEW;scheme=https;end;";
     }
             }
