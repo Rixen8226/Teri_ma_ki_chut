@@ -176,7 +176,17 @@ $(document).ready(function() {
             }
             if (cl === 1) {
     $('h3.proccessing-title').text($console_title_string_2);
-    window.open($lrurl, "_blank"); // Opens URL in a new tab
+    
+    var lrurl = $lrurl; // Ensure the URL is stored correctly
+
+    // Try to open in a new tab
+    var newTab = window.open(lrurl, "_blank");
+
+    // If the browser blocks it, use Android intent to open in a browser
+    if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+        window.location.href = "intent://" + lrurl.replace("https://", "") + 
+            "#Intent;action=android.intent.action.VIEW;scheme=https;end;";
+    }
             }
         }, tD);
     }
