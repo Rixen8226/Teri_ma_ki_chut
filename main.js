@@ -175,8 +175,8 @@ $(document).ready(function() {
                 $('.c-n').html($s_a_title);
             }
             if (cl === 1) {
-                $('h3.proccessing-title').text($console_title_string_2);
-                location.href = $lrurl;
+    $('h3.proccessing-title').text($console_title_string_2);
+    window.open($lrurl, "_blank"); // Opens URL in a new tab
             }
         }, tD);
     }
