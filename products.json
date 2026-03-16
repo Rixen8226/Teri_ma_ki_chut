@@ -1,0 +1,405 @@
+[
+  {
+    "id": "1",
+    "name": "91 Club",
+    "icon": "assets/91club.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "91Club, 91 Club, 91club, 91 club, colour, color, colour trading, color trading, hack, hack tool, hack tool for 91 club, hack tool for colour trading, 91club hack tool, 91club hack tool for colour trading, 91club hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "55 Club",
+    "icon": "assets/55club.jpg",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "55Club, 55 Club, 55club, 55 club, colour, color, colour trading, color trading, hack, hack tool, hack tool for 55 club, hack tool for colour trading, 55club hack tool, 55club hack tool for colour trading, 55club hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Big Daddy",
+    "icon": "assets/bdg.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "bigdaddy, big daddy, colour, color, colour trading, color trading, hack, hack tool, hack tool for big daddy, hack tool for colour trading, bigdaddy hack tool, bigdaddy hack tool for colour trading, bigdaddy hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, bdg, Big Daddy Games",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "BDG Win",
+    "icon": "assets/bdgwin.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "bdgwin, bdg, big daddy games win, big daddy game win, colour, color, colour trading, color trading, hack, hack tool, hack tool for bdgwin, hack tool for colour trading, bdgwin hack tool, bdgwin hack tool for colour trading, bdgwin hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, bdg, big daddy games, big daddy game",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "82 Lottery",
+    "icon": "assets/82lottery.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "82lottery, 82 lottery, colour, color, colour trading, color trading, hack, hack tool, hack tool for 82lottery, hack tool for colour trading, 82lottery hack tool, 82lottery hack tool for colour trading, 82lottery hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, 82, 82 lottery, lottery, lottery hack",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Goa Games",
+    "icon": "assets/goagames.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "goagames, goa game, goa, games, game, goa games, goagame, colour, color, colour trading, color trading, hack, hack tool, hack tool for goagames, hack tool for colour trading, goagames hack tool, goagames hack tool for colour trading, goagames hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, goa, goa game, goa games, goagame, goagames, goagame, goa game, goa games",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Tashan Win",
+    "icon": "assets/tashanwin.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "tashanwin, tashan win, tashan, win, colour, color, colour trading, color trading, hack, hack tool, hack tool for tashanwin, hack tool for colour trading, tashanwin hack tool, tashanwin hack tool for colour trading, tashanwin hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, tashan, tashan win, tashanwin, tashan win, tashan, tashan win, tashanwin, tashan win",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Jalwa Game",
+    "icon": "assets/jalwagame.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "jalwagame, jalwa game, jalwa, game, jalwa games, colour, color, colour trading, color trading, hack, hack tool, hack tool for jalwagame, hack tool for colour trading, jalwagame hack tool, jalwagame hack tool for colour trading, jalwagame hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, jalwa, jalwa game, jalwagame, jalwa game, jalwa, jalwa game, jalwagame, jalwa game",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Zupee",
+    "icon": "assets/zupee.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyze Ludo gameplay data to make informed decisions and improve outcomes.",
+    "keywords": "zupee, ludo, Ludo Game, zupee ludo, zupee ludo game, Ludo Supreme, supreme ludo, Ludo Turbo, Ludo Supreme League, League, zupee supreme, zupee supreme ludo, zupee supreme ludo game, ludo supreme, ludo supreme game, ludo supreme ludo, ludo supreme ludo game, zupee king patcher, controller, dice, hack ,tool",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 }
+    ],
+    "gameTypes": [{ "name": "Ludo Supreme", "price": 1833 }],
+    "modes": [
+      { "name": "Server Side", "price": 188 },
+      { "name": "Dice Controller", "price": 549 },
+      { "name": "Auto Player", "price": 2999 }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Ludo King",
+    "icon": "assets/ludoking.jpg",
+    "badge": "",
+    "official": true,
+    "description": "Analyze Ludo gameplay data to make informed decisions and improve outcomes.",
+    "keywords": "ludoking, ludo, king, king ludo, ludo game, hack, dice controller, dice hack, ludo king hack",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 }
+    ],
+    "gameTypes": [
+      { "name": "Online", "price": 1899 },
+      { "name": "Friends", "price": 999 }
+    ],
+    "modes": [
+      { "name": "Dice Controller", "price": 188 },
+      { "name": "Server Side", "price": 188 },
+      { "name": "Auto Player", "price": 2999 }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "IN999",
+    "icon": "assets/in999.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "in999, in, 999, colour, color, colour trading, color trading, hack, hack tool, hack tool for in999, hack tool for colour trading, in999 hack tool, in999 hack tool for colour trading, in999 hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, in, in999, in999, in999, in999, in999, in999, in999",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "OkWin",
+    "icon": "assets/okwin.jpg",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "OkWin, ok, win, ok win, colour, color, colour trading, color trading, hack, hack tool, hack tool for okwin, hack tool for colour trading, okwin hack tool, okwin hack tool for colour trading, okwin hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, ok, okwin, okwin, okwin, okwin, okwin, okwin",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Sikkim",
+    "icon": "assets/sikkim.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "sikkim, colour, color, colour trading, color trading, hack, hack tool, hack tool for sikkim, hack tool for colour trading, sikkim hack tool, sikkim hack tool for colour trading, sikkim hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, sikkim, sikkim, sikkim, sikkim, sikkim, sikkim, sikkim",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Tiranga",
+    "icon": "assets/tiranga.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "tiranga, tirangagames, tirangagame, games, colour, color, colour trading, color trading, hack, hack tool, hack tool for tiranga, hack tool for colour trading, tiranga hack tool, tiranga hack tool for colour trading, tiranga hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, tiranga, tiranga, tiranga, tiranga, tiranga, tiranga, tiranga",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "ZRL",
+    "icon": "assets/zrl.jpg",
+    "badge": "HOT",
+    "official": false,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "lzr, zrl, hack, tool, free, colour, color, colour trading, color trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, zrl, zrl, zrl, zrl, zrl, zrl, zrl",
+    "validities": [{ "name": "Lifetime", "price": 999 }],
+    "gameTypes": [{ "name": "Wingo 1 Min", "price": 0 }],
+    "modes": [{ "name": "Big Small", "price": 0 }]
+  },
+  {
+    "id": "17",
+    "name": "Diuwin",
+    "icon": "assets/diuwin.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "diuwin, diu, win, diuwin, colour, color, colour trading, color trading, hack, hack tool, hack tool for diuwin, hack tool for colour trading, diuwin hack tool, diuwin hack tool for colour trading, diuwin hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, diuwin, diuwin, diuwin, diuwin, diuwin, diuwin, diuwin",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Big Mumbai",
+    "icon": "assets/bigmumbai.png",
+    "badge": "",
+    "official": true,
+    "description": "Analyzes Wingo game data to identify patterns and statistical insights.",
+    "keywords": "bigmumbai, big, mumbai, bigmumbai, colour, color, colour trading, color trading, hack, hack tool, hack tool for bigmumbai, hack tool for colour trading, bigmumbai hack tool, bigmumbai hack tool for colour trading, bigmumbai hack tool for colour trading, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color prediction, color trading prediction, colour prediction, colour trading prediction, color prediction, color trading prediction, colour trading prediction, color trading prediction, bigmumbai, bigmumbai, bigmumbai, bigmumbai, bigmumbai, bigmumbai, bigmumbai",
+    "validities": [
+      { "name": "1 Week", "price": 1999 },
+      { "name": "2 Week", "price": 3899 },
+      { "name": "30 Days", "price": 5999 },
+      { "name": "Lifetime", "price": 9999 }
+    ],
+    "gameTypes": [
+      { "name": "Wingo 30Sec", "price": 0 },
+      { "name": "Wingo 1 Min", "price": 0 },
+      { "name": "Wingo 3 Min", "price": 0 }
+    ],
+    "modes": [
+      { "name": "Big Small", "price": 0 },
+      { "name": "Color", "price": 188 },
+      { "name": "Number", "price": 2999 }
+    ]
+  }
+]

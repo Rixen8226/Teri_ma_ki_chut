@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Complete Secure Payment | King Patcher</title>
+    <meta name="title" content="Complete Secure Payment | King Patcher" />
+    <meta
+      name="description"
+      content="Securely complete your purchase for King Patcher AI tools."
+    />
+    <link rel="icon" type="image/png" href="../assets/zR.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../65562359145645655/payment.css">
+  </head>
+  <body>
+    <div class="maint-mode" id="maintOverlay">
+        <div class="maint-icon">⚙️</div>
+        <h2 class="maint-title">System Maintenance</h2>
+        <p class="maint-desc">We are currently updating our payment systems to serve you better. Please try again in 5-10 minutes.</p>
+        <a href="/" class="m-btn m-btn-primary" style="width: auto; padding: 12px 30px; margin-top: 20px;">BACK TO HOME</a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-card">
+            <span class="m-icon">✅</span>
+            <h2 class="m-title">Payment Verified Successfully</h2>
+            <p class="m-desc">Your payment has been verified. Your access details are below.</p>
+            <div class="access-box">
+                <span class="key-text" id="accessKeyDisplay">KING-8829-XP92</span>
+                <button class="copy-btn" style="padding: 4px 10px; font-size: 10px;" onclick="copyKey()">COPY</button>
+            </div>
+            <a href="https://t.me/KingPatcherOfficial" target="_blank" class="m-btn m-btn-primary">DOWNLOAD APK</a>
+            <button class="m-btn m-btn-secondary" onclick="closeModal('successModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="errorModal">
+        <div class="modal-card">
+            <span class="m-icon">❌</span>
+            <h2 class="m-title" style="color:var(--danger)">Invalid Transaction ID</h2>
+            <p class="m-desc">The UTR you entered could not be verified. Please check your Transaction ID or contact support.</p>
+            <button class="m-btn m-btn-primary" onclick="closeModal('errorModal')">TRY AGAIN</button>
+            <a href="https://t.me/KingPatcherSupplier" target="_blank" class="m-btn m-btn-secondary">CONTACT SUPPORT</a>
+        </div>
+    </div>
+
+    <div id="mainContent" class="app-wrapper">
+      <header class="page-header">
+        <a href="/" class="back-btn">←</a>
+        <h1 class="header-main-title">Complete Secure Payment</h1>
+        <p class="header-sub-title" id="displayHeaderName">AI Predictor Tool</p>
+        <div class="header-badges">
+          <span class="h-badge">Instant Access</span>
+          <span class="h-badge">Secure System</span>
+          <span class="h-badge">Fast Verification</span>
+        </div>
+      </header>
+
+      <div class="content-padding">
+        <!-- 2 Product Details -->
+        <div class="section">
+          <h2 class="section-title">📦 Product Information</h2>
+          <div class="info-row">
+            <span class="info-label">Product Name</span
+            ><span class="info-value" id="infoName">...</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Plan Duration</span
+            ><span class="info-value" id="infoValidity">...</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Supported Game</span
+            ><span class="info-value" id="infoGame">...</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Tool Mode</span
+            ><span class="info-value" id="infoMode">...</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Access Type</span
+            ><span class="info-value">Private Prediction Tool</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Delivery</span
+            ><span class="info-value">Instant After Verification</span>
+          </div>
+
+          <div class="features-list">
+            <div class="feature-item">✔ AI System</div>
+            <div class="feature-item">✔ Data Analysis</div>
+            <div class="feature-item">✔ Easy to Use</div>
+            <div class="feature-item">✔ Private Access</div>
+          </div>
+        </div>
+
+        <!-- 3 Order Summary -->
+        <div class="section">
+          <h2 class="section-title">📝 Order Summary</h2>
+          <div class="summary-row">
+            <span>Product Base</span><span id="sumName">...</span>
+          </div>
+          <div class="summary-row">
+            <span>Tool Mode</span><span id="sumMode">...</span>
+          </div>
+          <div class="summary-row">
+            <span>Service Type</span><span>Premium Activation</span>
+          </div>
+          <div class="summary-total">
+            <span>Total Payable</span><span id="sumPrice">₹0</span>
+          </div>
+        </div>
+
+        <!-- 4 QR Code & 5 UPI Details -->
+        <div class="section qr-section">
+          <h2 class="section-title">⚡ Payment QR</h2>
+          <div class="qr-box"><img id="qrImg" src="" alt="Payment QR" /></div>
+          <div class="qr-info">
+            <div class="qr-receiver">
+              Receiver: <b>Nikhil</b>
+            </div>
+            <div class="qr-amount" id="qrAmount">₹1</div>
+          </div>
+          <div class="upi-copy-box">
+            <div class="upi-id-text" id="upiIdText">nikhil179@rapl</div>
+            <button class="copy-btn" onclick="copyUPI()">Copy</button>
+          </div>
+        </div>
+
+        <!-- 6 Instructions -->
+        <div class="section">
+          <h2 class="section-title">💡 Payment Instructions</h2>
+          <div class="instr-list">
+            <div class="instr-item">
+              Scan the QR Code using any UPI app (GPay, PhonePe, Paytm, BHIM).
+            </div>
+            <div class="instr-item">
+              If QR is not working, copy the UPI ID and pay the exact amount
+              manually.
+            </div>
+            <div class="instr-item">
+              After payment is done, note down the 12-digit UTR/Transaction ID.
+            </div>
+          </div>
+          <div class="instr-notice">
+            <b>Important Notice:</b>
+            <p>• QR upload limit is ₹2000 per transaction.</p>
+            <p>
+              • For higher payments, scan from another device or use UPI ID.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7 & 8 UTR Section -->
+        <div class="section">
+          <h2 class="section-title">✅ Enter Transaction ID</h2>
+          <p
+            style="
+              font-size: 12px;
+              color: var(--text-secondary);
+              margin-bottom: 12px;
+            "
+          >
+            Enter the 12-Digit UTR code from your payment receipt.
+          </p>
+          <input
+            type="tel"
+            class="utr-input"
+            id="utrInput"
+            placeholder="4056XXXXXXXX"
+            maxlength="12"
+            pattern="[0-9]{12}"
+            inputmode="numeric"
+          />
+          <button class="submit-btn" id="submitBtn" onclick="submitUTR()">
+            SUBMIT PAYMENT
+          </button>
+          <div class="status-msg" id="statusMsg"></div>
+        </div>
+
+        <!-- 9 Security Notice -->
+        <div class="section security-notice">
+          <h2
+            class="section-title"
+            style="color: var(--text-secondary); font-size: 12px"
+          >
+            🛡️ Security Notice
+          </h2>
+          <ul>
+            <li>Do not share your transaction ID with anyone else.</li>
+            <li>Fake payment submissions are strictly prohibited.</li>
+            <li>Fraud attempts lead to permanent access restriction.</li>
+          </ul>
+        </div>
+
+        <!-- 10 Support Section -->
+        <div class="section">
+          <h2 class="section-title">🆘 Need Help?</h2>
+          <p style="font-size: 12px; color: var(--text-secondary)">
+            facing issues? Our team is available 24/7 to help you.
+          </p>
+          <div class="support-grid">
+            <a
+              href="https://t.me/KingPatcherSupplier"
+              class="support-btn"
+              target="_blank"
+              >Support Agent</a
+            >
+            <a
+              href="https://t.me/KingPatcherOfficial"
+              class="support-btn"
+              target="_blank"
+              >Join Channel</a
+            >
+          </div>
+        </div>
+
+        <!-- 11 FAQ Section -->
+        <div class="section">
+          <h2 class="section-title">❓ Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-q">How long does verification take?</div>
+            <div class="faq-a">
+              Usually within 1-5 minutes after submitting your 12-digit UTR ID.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What if I enter wrong ID?</div>
+            <div class="faq-a">
+              Immediately contact our support agent with your payment
+              screenshot.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How will I get my tool?</div>
+            <div class="faq-a">
+              A private access link/key will be provided after verification is
+              complete.
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 Trust Section -->
+        <div class="trust-section">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>Secure Payment
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">👤</span>Private Access
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⚡</span>Instant Delivery
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🎧</span>24/7 Support
+          </div>
+        </div>
+
+        <!-- 13 Footer -->
+        <footer class="footer-links">
+          <a href="/Terms/">Terms & Conditions</a>
+          <a href="/PrivacyPolicy/">Privacy Policy</a>
+          <a href="/Refund&UsagePolicy/">Refund & Usage Policy</a>
+        </footer>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../957643864316/guardian.js"></script>
+    <script src="../957643864316/connect.js"></script>
+    <script src="../957643864316/payment.js"></script>
+  </body>
+</html>
