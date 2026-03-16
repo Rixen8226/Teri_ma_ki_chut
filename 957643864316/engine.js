@@ -175,7 +175,7 @@
     window.goToPayment = function() {
       if(!currentProduct) return;
       const v = dValidityValue.textContent, g = dGameTypeValue.textContent, m = document.getElementById("dModeValue").textContent, p = dPrice.textContent.replace("₹", "");
-      window.location.href = `/Payment/?prod=${encodeURIComponent(currentProduct.name)}&v=${encodeURIComponent(v)}&g=${encodeURIComponent(g)}&m=${encodeURIComponent(m)}&p=${p}`;
+      window.location.href = `Payment/?prod=${encodeURIComponent(currentProduct.name)}&v=${encodeURIComponent(v)}&g=${encodeURIComponent(g)}&m=${encodeURIComponent(m)}&p=${p}`;
     };
 
     let touchStartY = 0, isDragging = false;
